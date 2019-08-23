@@ -1,0 +1,33 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import Artical from '../components/Artical'
+import PostList from '../components/PostList'
+import UserInfo from '../components/UserInfo'
+import SlideBar from '../components/SlideBar'
+Vue.use(Router)
+
+export default new Router({
+  routes: [{
+    name:'root',
+    path:'/',
+    components:{
+      main:PostList
+    }
+  },
+  {
+    name:'Artical',
+    path:'/artical/:id&author=:name',
+    components:{
+      main:Artical,
+      slidebar:SlideBar
+    }
+  },
+  {
+    name:'user_info',
+    path:'/userinfo/:name',
+    components:{
+      main:UserInfo
+    }
+  }
+]
+})
